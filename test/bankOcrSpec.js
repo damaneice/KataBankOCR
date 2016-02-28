@@ -12,7 +12,7 @@ describe('Parse character into account number', function() {
 
     var actual = bankOCR.convert(zero);
 
-    expect(actual).to.equal(0)
+    expect(actual).to.equal('0')
   });
 
   it('one to 1', function() {
@@ -25,7 +25,7 @@ describe('Parse character into account number', function() {
 
     var actual = bankOCR.convert(one);
 
-    expect(actual).to.equal(1)
+    expect(actual).to.equal('1')
   });
 
   it('two to 2', function() {
@@ -37,7 +37,7 @@ describe('Parse character into account number', function() {
 
     var actual = bankOCR.convert(two);
 
-    expect(actual).to.equal(2)
+    expect(actual).to.equal('2')
   });
 
   it('three to 3', function() {
@@ -49,7 +49,7 @@ describe('Parse character into account number', function() {
 
     var actual = bankOCR.convert(three);
 
-    expect(actual).to.equal(3)
+    expect(actual).to.equal('3')
   });
 
   it('four to 4', function() {
@@ -61,7 +61,7 @@ describe('Parse character into account number', function() {
 
     var actual = bankOCR.convert(four);
 
-    expect(actual).to.equal(4)
+    expect(actual).to.equal('4')
   });
 
   it('five to 5', function() {
@@ -73,7 +73,7 @@ describe('Parse character into account number', function() {
 
     var actual = bankOCR.convert(five);
 
-    expect(actual).to.equal(5)
+    expect(actual).to.equal('5')
   });
 
   it('six to 6', function() {
@@ -85,7 +85,7 @@ describe('Parse character into account number', function() {
 
     var actual = bankOCR.convert(six);
 
-    expect(actual).to.equal(6)
+    expect(actual).to.equal('6')
   });
 
   it('seven to 7', function() {
@@ -98,7 +98,7 @@ describe('Parse character into account number', function() {
 
     var actual = bankOCR.convert(seven);
 
-    expect(actual).to.equal(7)
+    expect(actual).to.equal('7')
   });
 
   it('eight to 8', function() {
@@ -110,7 +110,7 @@ describe('Parse character into account number', function() {
 
     var actual = bankOCR.convert(eight);
 
-    expect(actual).to.equal(8)
+    expect(actual).to.equal('8')
   });
 
   it('nine to 9', function() {
@@ -122,8 +122,7 @@ describe('Parse character into account number', function() {
 
     var actual = bankOCR.convert(nine);
 
-    expect(actual).to.equal(9)
+    expect(actual).to.equal('9')
   });
-
 
 });
