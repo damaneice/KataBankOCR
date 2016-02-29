@@ -124,6 +124,18 @@ describe('Parse character into account number', function() {
 
     expect(actual).to.equal('9')
   });
+
+  it('unknown number to ?', function() {
+    var unknown =
+    [' _ ',
+     '| |' ,
+     ' _|',
+     '   '].join('');
+
+    var actual = bankOCR.convert(unknown);
+
+    expect(actual).to.equal('?')
+  });
 });
 
 describe('Account numbers:', function(){
