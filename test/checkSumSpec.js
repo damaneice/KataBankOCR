@@ -11,7 +11,7 @@ describe('checkSum:', function(){
   });
 
   it('account number is invalid', function() {
-    var accountNumber = '345882866';
+    var accountNumber = '664371495';
 
     var result = checkSum.isValidAccountNumber(accountNumber);
 
