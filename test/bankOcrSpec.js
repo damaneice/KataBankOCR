@@ -1,5 +1,5 @@
 'use strict';
-
+var module = {}
 describe('Parse character into account number', function() {
 
   it('zero to 0', function() {
@@ -8,7 +8,7 @@ describe('Parse character into account number', function() {
         '| |' ,
         '|_|',
         '   '
-      ].join('\n');
+      ].join('');
 
     var actual = bankOCR.convert(zero);
 
@@ -21,7 +21,7 @@ describe('Parse character into account number', function() {
         '  |' ,
         '  |',
         '   '
-      ].join('\n');
+      ].join('');
 
     var actual = bankOCR.convert(one);
 
@@ -33,7 +33,7 @@ describe('Parse character into account number', function() {
     [' _ ',
      ' _|' ,
      '|_ ',
-     '   '].join('\n');
+     '   '].join('');
 
     var actual = bankOCR.convert(two);
 
@@ -45,7 +45,7 @@ describe('Parse character into account number', function() {
     [' _ ',
      ' _|' ,
      ' _|',
-     '   '].join('\n');
+     '   '].join('');
 
     var actual = bankOCR.convert(three);
 
@@ -57,7 +57,7 @@ describe('Parse character into account number', function() {
     ['   ',
      '|_|' ,
      '  |',
-     '   '].join('\n');
+     '   '].join('');
 
     var actual = bankOCR.convert(four);
 
@@ -69,7 +69,7 @@ describe('Parse character into account number', function() {
     [' _ ',
      '|_ ' ,
      ' _|',
-     '   '].join('\n');
+     '   '].join('');
 
     var actual = bankOCR.convert(five);
 
@@ -81,7 +81,7 @@ describe('Parse character into account number', function() {
     [' _ ',
      '|_ ' ,
      '|_|',
-     '   '].join('\n');
+     '   '].join('');
 
     var actual = bankOCR.convert(six);
 
@@ -94,7 +94,7 @@ describe('Parse character into account number', function() {
         '  |' ,
         '  |',
         '   '
-      ].join('\n');
+      ].join('');
 
     var actual = bankOCR.convert(seven);
 
@@ -106,7 +106,7 @@ describe('Parse character into account number', function() {
     [' _ ',
      '|_|' ,
      '|_|',
-     '   '].join('\n');
+     '   '].join('');
 
     var actual = bankOCR.convert(eight);
 
@@ -118,11 +118,28 @@ describe('Parse character into account number', function() {
     [' _ ',
      '|_|' ,
      ' _|',
-     '   '].join('\n');
+     '   '].join('');
 
     var actual = bankOCR.convert(nine);
 
     expect(actual).to.equal('9')
+  });
+
+});
+
+describe('Account numbers:', function(){
+
+  it('should recognize account number as 000000000', function() {
+    var accountNumber =
+       [' _  _  _  _  _  _  _  _  _ ',
+        '| || || || || || || || || |' ,
+        '|_||_||_||_||_||_||_||_||_|',
+        '                           '
+      ].join('\n');
+
+    var actual = bankOCR.recognize(accountNumber);
+
+    expect(actual).to.equal('000000000')
   });
 
 });

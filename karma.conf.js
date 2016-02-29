@@ -13,6 +13,9 @@ module.exports = function(config) {
       'lib/*.js',
       'test/*.js'
     ],
+    env: {
+     type: 'node'
+   },
 
     exclude: [
     ],
