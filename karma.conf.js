@@ -10,7 +10,8 @@ module.exports = function(config) {
     frameworks: ['mocha', 'chai'],
 
     files: [
-      'lib/*.js',
+      'lib/checkSum.js',
+      'lib/bankOcr.js',
       'test/*.js'
     ],
     env: {
