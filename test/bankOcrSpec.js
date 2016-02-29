@@ -142,4 +142,17 @@ describe('Account numbers:', function(){
     expect(actual).to.equal('000000000')
   });
 
+  it('should recognize account number as 123456789', function() {
+    var accountNumber =
+       ['    _  _     _  _  _  _  _ ',
+        '  | _| _||_||_ |_   ||_||_|' ,
+        '  ||_  _|  | _||_|  ||_| _|',
+        '                           '
+      ].join('\n');
+
+    var actual = bankOCR.recognize(accountNumber);
+
+    expect(actual).to.equal('123456789')
+  });
+
 });
