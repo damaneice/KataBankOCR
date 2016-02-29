@@ -166,4 +166,30 @@ describe('Account numbers:', function(){
     expect(actual).to.equal('123456789')
   });
 
+  it('should recognize account number contains an illegible character', function() {
+    var accountNumber =
+       ['    _  _     _  _  _  _  _ ',
+        '  | _| _||_||_ |_   ||_|| |' ,
+        '  ||_  _|  | _||_|  ||_| _|',
+        '                           '
+      ].join('\n');
+
+    var actual = bankOCR.recognize(accountNumber);
+
+    expect(actual).to.equal('12345678? ILL')
+  });
+
+  it('should recognize account number is invalid', function() {
+    var accountNumber =
+       ['    _  _     _  _  _  _  _ ',
+        '  | _| _||_||_ |_   ||_||_|' ,
+        '  ||_  _|  | _||_|  ||_||_|',
+        '                           '
+      ].join('\n');
+
+    var actual = bankOCR.recognize(accountNumber);
+
+    expect(actual).to.equal('123456788 ERR')
+  });
+
 });
